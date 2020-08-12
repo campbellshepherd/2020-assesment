@@ -56,6 +56,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // listBox1
             // 
@@ -85,6 +86,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmMenu";
             this.Text = "FrmMenu";
+            this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

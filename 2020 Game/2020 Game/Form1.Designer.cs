@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlGame = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.startToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -40,7 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.tmrPlayer = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,15 +58,15 @@
             this.label1.Text = "Ogre Blaster 3";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // panel1
+            // pnlGame
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.panel1.Location = new System.Drawing.Point(12, 148);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(718, 394);
-            this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.pnlGame.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pnlGame.Location = new System.Drawing.Point(12, 148);
+            this.pnlGame.Name = "pnlGame";
+            this.pnlGame.Size = new System.Drawing.Size(718, 394);
+            this.pnlGame.TabIndex = 1;
+            this.pnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.pnlGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // menuStrip1
             // 
@@ -161,6 +161,12 @@
             this.label7.TabIndex = 8;
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // tmrPlayer
+            // 
+            this.tmrPlayer.Enabled = true;
+            this.tmrPlayer.Interval = 1;
+            this.tmrPlayer.Tick += new System.EventHandler(this.tmrPlayer_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,12 +179,14 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlGame);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "FrmGame";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -189,7 +197,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlGame;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem startToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stopToolStripMenuItem;
@@ -199,7 +207,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer tmrPlayer;
     }
 }
 
