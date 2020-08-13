@@ -66,6 +66,8 @@
             this.pnlGame.Size = new System.Drawing.Size(718, 394);
             this.pnlGame.TabIndex = 1;
             this.pnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.pnlGame.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlGame_MouseClick);
+            this.pnlGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlGame_MouseDown);
             this.pnlGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // menuStrip1

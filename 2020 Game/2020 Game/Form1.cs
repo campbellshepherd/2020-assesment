@@ -16,6 +16,7 @@ namespace _2020_Game
         Graphics g;
         Player player = new Player();
         bool turnLeft, turnRight;
+        List<Bullet> bullets = new List<Bullet>();
         public Form1()
         {
             InitializeComponent();
@@ -37,6 +38,11 @@ namespace _2020_Game
             g = e.Graphics;
             player.drawPlayer(g);
             Cursor.Hide();
+            foreach (Bullet m in bullets)
+            {
+                m.drawBullet(g);
+                m.moveBullet(g);
+            }
         }
 
         private void tmrPlayer_Tick(object sender, EventArgs e)
@@ -56,6 +62,19 @@ namespace _2020_Game
         {
             if (e.KeyData == Keys.Left) { turnLeft = true; }
             if (e.KeyData == Keys.Right) { turnRight = true; }
+        }
+
+        private void pnlGame_MouseClick(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void pnlGame_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                bullets.Add(new Bullet(player.playerRec, player.rotationAngle));
+            }
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)
