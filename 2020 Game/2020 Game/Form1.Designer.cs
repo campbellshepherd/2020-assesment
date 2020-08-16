@@ -41,6 +41,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tmrPlayer = new System.Windows.Forms.Timer(this.components);
+            this.TmrEnemy = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -169,6 +170,12 @@
             this.tmrPlayer.Interval = 1;
             this.tmrPlayer.Tick += new System.EventHandler(this.tmrPlayer_Tick);
             // 
+            // TmrEnemy
+            // 
+            this.TmrEnemy.Enabled = true;
+            this.TmrEnemy.Interval = 1;
+            this.TmrEnemy.Tick += new System.EventHandler(this.TmrEnemy_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,6 +217,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Timer tmrPlayer;
+        private System.Windows.Forms.Timer TmrEnemy;
     }
 }
 
