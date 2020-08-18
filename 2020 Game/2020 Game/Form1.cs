@@ -17,13 +17,13 @@ namespace _2020_Game
         Player player = new Player();
         bool turnLeft, turnRight;
         List<Bullet> bullets = new List<Bullet>();
-        Enemy[] enemies = new Enemy[7];
+        Enemy[] enemies = new Enemy[12];
         Random yspeed = new Random();
         public Form1()
         {
             InitializeComponent();
             typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, pnlGame, new object[] { true });
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 12; i++)
             {
                 int x = 10 + (i * 75);
                 enemies[i] = new Enemy(x);
@@ -50,10 +50,10 @@ namespace _2020_Game
                 m.drawBullet(g);
                 m.moveBullet(g);
             }
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 12; i++)
             {
-                int rndmspeed = yspeed.Next(5, 20);
-                enemies[i].y2 += rndmspeed;
+                int rndmspeed = yspeed.Next(1, 5);
+                enemies[i].y += rndmspeed;
                 enemies[i].DrawEnemy(g);
             }
             }
@@ -63,6 +63,7 @@ namespace _2020_Game
             if (turnRight)
             {
                 player.rotationAngle += 5;
+                
             }
             if (turnLeft)
             {
@@ -92,14 +93,30 @@ namespace _2020_Game
 
         private void TmrEnemy_Tick(object sender, EventArgs e)
         {
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 12; i++)
             {
                 enemies[i].MoveEnemy();
-                if (enemies[i].y2 >= pnlGame.Height)
+                if (enemies[i].y >= pnlGame.Height)
                 {
-                    enemies[i].y2 = 30;
+                    enemies[i].y = 30;
                 }
-                enemies[i].rotationAngle = 0;
+                if (player.playerRec.IntersectsWith(enemies[i].enmyRec))
+                {
+                    enemies[i].y = 30;
+                }
+                foreach (Enemy p in enemies)
+                {
+                    foreach (Bullet m in bullets)
+                    {
+                        if (p.enmyRec.IntersectsWith(m.bulletRec))
+                        {
+                            p.y = -20;// relocate planet to the top of the form
+
+                            bullets.Remove(m);
+                            break;
+                        }
+                    }
+                }
             }
             
         }
