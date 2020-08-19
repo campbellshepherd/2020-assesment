@@ -13,6 +13,8 @@ namespace _2020_Game
 {
     public partial class Form1 : Form
     {
+        int ammo = 5;
+        int lives = 5;
         Graphics g;
         Player player = new Player();
         bool turnLeft, turnRight;
@@ -28,6 +30,8 @@ namespace _2020_Game
                 int x = 10 + (i * 75);
                 enemies[i] = new Enemy(x);
             }
+            lblAmmo.Text = "5";
+            LblLives.Text = "5";
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -44,7 +48,7 @@ namespace _2020_Game
         {
             g = e.Graphics;
             player.drawPlayer(g);
-            Cursor.Hide();
+           
             foreach (Bullet m in bullets)
             {
                 m.drawBullet(g);
@@ -69,6 +73,23 @@ namespace _2020_Game
             {
                 player.rotationAngle -= 5;
             }
+            if (ammo == 0)
+            {
+                TmrBullet.Enabled=true;
+                lblAmmo.Text = "Reloading";
+            }
+            if (lives == 0)
+            {
+                TmrBullet.Enabled = false;
+                tmrPlayer.Enabled = false;
+                TmrEnemy.Enabled = false;
+                MessageBox.Show("GameOver");
+                Cursor.Show();
+
+
+            }
+            Cursor.Hide();
+
             pnlGame.Invalidate();
         }
 
@@ -85,9 +106,16 @@ namespace _2020_Game
 
         private void pnlGame_MouseDown(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (ammo > 0)
             {
-                bullets.Add(new Bullet(player.playerRec, player.rotationAngle));
+
+
+                if (e.Button == MouseButtons.Left)
+                {
+                    bullets.Add(new Bullet(player.playerRec, player.rotationAngle));
+                    ammo -= 1;
+                    lblAmmo.Text = ammo.ToString();
+                }
             }
         }
 
@@ -103,6 +131,9 @@ namespace _2020_Game
                 if (player.playerRec.IntersectsWith(enemies[i].enmyRec))
                 {
                     enemies[i].y = 30;
+                    lives -= 1;
+                    LblLives.Text = lives.ToString();
+
                 }
                 foreach (Enemy p in enemies)
                 {
@@ -120,6 +151,25 @@ namespace _2020_Game
             }
             
         }
+
+        private void TmrBullet_Tick(object sender, EventArgs e)
+        {
+            ammo = 5;
+            lblAmmo.Text = ammo.ToString();
+            TmrBullet.Enabled = false;
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LblLives_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void Form1_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.Left) { turnLeft = false; }
