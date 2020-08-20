@@ -10,12 +10,11 @@ namespace _2020_Game
 {
     class Enemy
     {
-        public int rotationAngle;
         public int x, y, width, height;
         public Image enemyImage;
         public Rectangle enmyRec;
         public Matrix matrixenemy;
-        public Point centre;
+        public Point centreEnemy;
         public Enemy(int spacing)
         {
             x = spacing;
@@ -29,10 +28,9 @@ namespace _2020_Game
         {
             enmyRec = new Rectangle(x, y, width, height);
             g.DrawImage(enemyImage, enmyRec);
-            centre = new Point(enmyRec.X + width / 2, enmyRec.Y + width / 2);
+            centreEnemy = new Point(x,y);
             matrixenemy = new Matrix();
-            matrixenemy.RotateAt(rotationAngle, centre);
-            rotationAngle = 0;
+           
             g.Transform = matrixenemy;
 
         }

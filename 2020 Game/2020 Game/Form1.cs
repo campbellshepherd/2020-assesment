@@ -51,13 +51,13 @@ namespace _2020_Game
            
             foreach (Bullet m in bullets)
             {
-                m.drawBullet(g);
-                m.moveBullet(g);
+               m.drawBullet(g);
+               m.moveBullet(g);
             }
             for (int i = 0; i < 12; i++)
             {
                 int rndmspeed = yspeed.Next(1, 5);
-                enemies[i].y += rndmspeed;
+               enemies[i].y += rndmspeed;
                 enemies[i].DrawEnemy(g);
             }
             }
