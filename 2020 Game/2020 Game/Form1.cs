@@ -47,6 +47,12 @@ namespace _2020_Game
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             g = e.Graphics;
+            for (int i = 0; i < 12; i++)
+            {
+                int rndmspeed = yspeed.Next(1, 5);
+                enemies[i].y += rndmspeed;
+                enemies[i].DrawEnemy(g);
+            }
             player.drawPlayer(g);
            
             foreach (Bullet m in bullets)
@@ -54,12 +60,7 @@ namespace _2020_Game
                m.drawBullet(g);
                m.moveBullet(g);
             }
-            for (int i = 0; i < 12; i++)
-            {
-                int rndmspeed = yspeed.Next(1, 5);
-               enemies[i].y += rndmspeed;
-                enemies[i].DrawEnemy(g);
-            }
+            
             }
 
         private void tmrPlayer_Tick(object sender, EventArgs e)
@@ -83,12 +84,14 @@ namespace _2020_Game
                 TmrBullet.Enabled = false;
                 tmrPlayer.Enabled = false;
                 TmrEnemy.Enabled = false;
-                MessageBox.Show("GameOver");
+                FrmGameover form1 = new FrmGameover();
+                form1.ShowDialog();
+               
                 Cursor.Show();
 
 
             }
-            Cursor.Hide();
+            
 
             pnlGame.Invalidate();
         }
