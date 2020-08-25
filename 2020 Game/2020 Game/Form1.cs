@@ -21,9 +21,10 @@ namespace _2020_Game
         List<Bullet> bullets = new List<Bullet>();
         Enemy[] enemies = new Enemy[12];
         Random yspeed = new Random();
-        public Form1()
+        public Form1(string playerName)
         {
             InitializeComponent();
+            lblName.Text = playerName;
             typeof(Panel).InvokeMember("DoubleBuffered", BindingFlags.SetProperty | BindingFlags.Instance | BindingFlags.NonPublic, null, pnlGame, new object[] { true });
             for (int i = 0; i < 12; i++)
             {
@@ -55,6 +56,7 @@ namespace _2020_Game
             }
             player.drawPlayer(g);
            
+           
             foreach (Bullet m in bullets)
             {
                m.drawBullet(g);
@@ -65,6 +67,7 @@ namespace _2020_Game
 
         private void tmrPlayer_Tick(object sender, EventArgs e)
         {
+           
             if (turnRight)
             {
                 player.rotationAngle += 5;
@@ -84,10 +87,11 @@ namespace _2020_Game
                 TmrBullet.Enabled = false;
                 tmrPlayer.Enabled = false;
                 TmrEnemy.Enabled = false;
-                FrmGameover form1 = new FrmGameover();
-                form1.ShowDialog();
-               
+                Hide();
+                FrmGameover form = new FrmGameover();
+                form.ShowDialog();
                 Cursor.Show();
+                ;
 
 
             }
@@ -124,6 +128,7 @@ namespace _2020_Game
 
         private void TmrEnemy_Tick(object sender, EventArgs e)
         {
+           
             for (int i = 0; i < 12; i++)
             {
                 enemies[i].MoveEnemy();
@@ -168,8 +173,9 @@ namespace _2020_Game
 
         }
 
-        private void LblLives_Click(object sender, EventArgs e)
+        private void pnlGame_MouseHover(object sender, EventArgs e)
         {
+            Cursor.Hide();
 
         }
 

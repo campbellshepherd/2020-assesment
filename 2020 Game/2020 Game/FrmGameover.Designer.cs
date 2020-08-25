@@ -36,6 +36,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.TxtName = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label4
@@ -101,7 +103,7 @@
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(14, 384);
+            this.btnStart.Location = new System.Drawing.Point(14, 505);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(145, 45);
             this.btnStart.TabIndex = 15;
@@ -112,19 +114,40 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(199, 384);
+            this.button1.Location = new System.Drawing.Point(199, 505);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(145, 45);
             this.button1.TabIndex = 16;
             this.button1.Text = "Quit";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // TxtName
+            // 
+            this.TxtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtName.Location = new System.Drawing.Point(123, 429);
+            this.TxtName.Name = "TxtName";
+            this.TxtName.Size = new System.Drawing.Size(125, 26);
+            this.TxtName.TabIndex = 18;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(152, 394);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 20);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Name";
             // 
             // FrmGameover
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(380, 450);
+            this.ClientSize = new System.Drawing.Size(380, 562);
+            this.Controls.Add(this.TxtName);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.label1);
@@ -135,6 +158,7 @@
             this.Controls.Add(this.listBox1);
             this.Name = "FrmGameover";
             this.Text = "FrmGameover";
+            this.Load += new System.EventHandler(this.FrmGameover_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -150,5 +174,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox TxtName;
+        private System.Windows.Forms.Label label7;
     }
 }

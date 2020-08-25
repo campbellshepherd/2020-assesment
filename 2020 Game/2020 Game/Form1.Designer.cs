@@ -37,7 +37,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblName = new System.Windows.Forms.Label();
             this.LblLives = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tmrPlayer = new System.Windows.Forms.Timer(this.components);
@@ -72,6 +72,7 @@
             this.pnlGame.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             this.pnlGame.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pnlGame_MouseClick);
             this.pnlGame.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlGame_MouseDown);
+            this.pnlGame.MouseHover += new System.EventHandler(this.pnlGame_MouseHover);
             this.pnlGame.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // menuStrip1
@@ -128,18 +129,18 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Score";
             // 
-            // label5
+            // lblName
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label5.Location = new System.Drawing.Point(749, 172);
-            this.label5.MinimumSize = new System.Drawing.Size(70, 30);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 30);
-            this.label5.TabIndex = 6;
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblName.AutoSize = true;
+            this.lblName.BackColor = System.Drawing.Color.White;
+            this.lblName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblName.Location = new System.Drawing.Point(749, 172);
+            this.lblName.MinimumSize = new System.Drawing.Size(70, 30);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(70, 30);
+            this.lblName.TabIndex = 6;
+            this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LblLives
             // 
@@ -153,7 +154,6 @@
             this.LblLives.Size = new System.Drawing.Size(70, 30);
             this.LblLives.TabIndex = 7;
             this.LblLives.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.LblLives.Click += new System.EventHandler(this.LblLives_Click);
             // 
             // label7
             // 
@@ -219,7 +219,7 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.LblLives);
-            this.Controls.Add(this.label5);
+            this.Controls.Add(this.lblName);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -248,7 +248,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label LblLives;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Timer tmrPlayer;

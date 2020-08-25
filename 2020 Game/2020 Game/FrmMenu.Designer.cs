@@ -37,6 +37,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TxtName = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +58,7 @@
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(134, 393);
+            this.btnStart.Location = new System.Drawing.Point(137, 461);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(145, 45);
             this.btnStart.TabIndex = 2;
@@ -114,10 +116,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(213, 102);
-            this.label5.MinimumSize = new System.Drawing.Size(168, 250);
+            this.label5.Location = new System.Drawing.Point(231, 102);
+            this.label5.MaximumSize = new System.Drawing.Size(170, 250);
+            this.label5.MinimumSize = new System.Drawing.Size(170, 250);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 250);
+            this.label5.Size = new System.Drawing.Size(170, 250);
             this.label5.TabIndex = 9;
             this.label5.Text = "label5";
             // 
@@ -131,12 +134,33 @@
             this.label6.TabIndex = 10;
             this.label6.Text = "Insturctions";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(177, 372);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 20);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Name";
+            // 
+            // TxtName
+            // 
+            this.TxtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TxtName.Location = new System.Drawing.Point(148, 407);
+            this.TxtName.Name = "TxtName";
+            this.TxtName.Size = new System.Drawing.Size(125, 26);
+            this.TxtName.TabIndex = 12;
+            this.TxtName.TextChanged += new System.EventHandler(this.TxtName_TextChanged);
+            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(413, 450);
+            this.ClientSize = new System.Drawing.Size(413, 518);
+            this.Controls.Add(this.TxtName);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -165,5 +189,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox TxtName;
     }
 }

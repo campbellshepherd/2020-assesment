@@ -24,10 +24,15 @@ namespace _2020_Game
 
         private void button1_Click(object sender, EventArgs e)
         {
-           Form1 form1= new Form1();
+           Form1 form1= new Form1(TxtName.Text);
             Hide();
             form1.ShowDialog();
             
+        }
+
+        private void TxtName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
