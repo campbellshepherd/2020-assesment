@@ -12,10 +12,13 @@ namespace _2020_Game
 {
     public partial class FrmGameover : Form
     {
-        public FrmGameover()
+        public FrmGameover(string playerscore, string playername)
         {
             
+            
             InitializeComponent();
+            label6.Text = playerscore;
+            label5.Text = playername;
             Cursor.Show();
         }
 

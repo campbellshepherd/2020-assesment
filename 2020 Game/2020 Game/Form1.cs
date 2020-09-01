@@ -15,10 +15,12 @@ namespace _2020_Game
     {
         int ammo = 5;
         int lives = 5;
+        int score=0;
         Graphics g;
         Player player = new Player();
         bool turnLeft, turnRight;
         List<Bullet> bullets = new List<Bullet>();
+        List<HighScore> highScores = new List<HighScore>();
         Enemy[] enemies = new Enemy[12];
         Random yspeed = new Random();
         public Form1(string playerName)
@@ -33,6 +35,7 @@ namespace _2020_Game
             }
             lblAmmo.Text = "5";
             LblLives.Text = "5";
+            lblScore.Text = score.ToString();
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -88,7 +91,7 @@ namespace _2020_Game
                 tmrPlayer.Enabled = false;
                 TmrEnemy.Enabled = false;
                 Hide();
-                FrmGameover form = new FrmGameover();
+                FrmGameover form = new FrmGameover(score.ToString(),lblName.Text);
                 form.ShowDialog();
                 Cursor.Show();
                 ;
@@ -131,6 +134,7 @@ namespace _2020_Game
            
             for (int i = 0; i < 12; i++)
             {
+
                 enemies[i].MoveEnemy();
                 if (enemies[i].y >= pnlGame.Height)
                 {
@@ -143,6 +147,7 @@ namespace _2020_Game
                     LblLives.Text = lives.ToString();
 
                 }
+                
                 foreach (Enemy p in enemies)
                 {
                     foreach (Bullet m in bullets)
@@ -150,9 +155,13 @@ namespace _2020_Game
                         if (p.enmyRec.IntersectsWith(m.bulletRec))
                         {
                             p.y = -20;// relocate planet to the top of the form
-
+                            score += 1;
+                            lblScore.Text = score.ToString();
                             bullets.Remove(m);
                             break;
+                           
+
+
                         }
                     }
                 }
@@ -176,6 +185,11 @@ namespace _2020_Game
         private void pnlGame_MouseHover(object sender, EventArgs e)
         {
             Cursor.Hide();
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
 

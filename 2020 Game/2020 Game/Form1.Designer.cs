@@ -39,7 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.LblLives = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblScore = new System.Windows.Forms.Label();
             this.tmrPlayer = new System.Windows.Forms.Timer(this.components);
             this.TmrEnemy = new System.Windows.Forms.Timer(this.components);
             this.TmrBullet = new System.Windows.Forms.Timer(this.components);
@@ -155,18 +155,18 @@
             this.LblLives.TabIndex = 7;
             this.LblLives.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label7
+            // lblScore
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.White;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label7.Location = new System.Drawing.Point(749, 357);
-            this.label7.MinimumSize = new System.Drawing.Size(70, 30);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 30);
-            this.label7.TabIndex = 8;
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblScore.AutoSize = true;
+            this.lblScore.BackColor = System.Drawing.Color.White;
+            this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblScore.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblScore.Location = new System.Drawing.Point(749, 357);
+            this.lblScore.MinimumSize = new System.Drawing.Size(70, 30);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(70, 30);
+            this.lblScore.TabIndex = 8;
+            this.lblScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tmrPlayer
             // 
@@ -217,7 +217,7 @@
             this.ClientSize = new System.Drawing.Size(834, 551);
             this.Controls.Add(this.lblAmmo);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblScore);
             this.Controls.Add(this.LblLives);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.label4);
@@ -229,6 +229,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "FrmGame";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.menuStrip1.ResumeLayout(false);
@@ -250,7 +251,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label LblLives;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblScore;
         private System.Windows.Forms.Timer tmrPlayer;
         private System.Windows.Forms.Timer TmrEnemy;
         private System.Windows.Forms.Timer TmrBullet;
