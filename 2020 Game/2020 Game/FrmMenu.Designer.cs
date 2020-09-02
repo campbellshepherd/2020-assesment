@@ -30,8 +30,8 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.lstBoxName = new System.Windows.Forms.ListBox();
+            this.lstBoxScore = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -66,21 +66,21 @@
             this.btnStart.UseVisualStyleBackColor = true;
             this.btnStart.Click += new System.EventHandler(this.button1_Click);
             // 
-            // listBox1
+            // lstBoxName
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(17, 114);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(84, 238);
-            this.listBox1.TabIndex = 3;
+            this.lstBoxName.FormattingEnabled = true;
+            this.lstBoxName.Location = new System.Drawing.Point(17, 114);
+            this.lstBoxName.Name = "lstBoxName";
+            this.lstBoxName.Size = new System.Drawing.Size(84, 238);
+            this.lstBoxName.TabIndex = 3;
             // 
-            // listBox2
+            // lstBoxScore
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(97, 114);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(84, 238);
-            this.listBox2.TabIndex = 4;
+            this.lstBoxScore.FormattingEnabled = true;
+            this.lstBoxScore.Location = new System.Drawing.Point(97, 114);
+            this.lstBoxScore.Name = "lstBoxScore";
+            this.lstBoxScore.Size = new System.Drawing.Size(84, 238);
+            this.lstBoxScore.TabIndex = 4;
             // 
             // label3
             // 
@@ -166,8 +166,8 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.listBox2);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.lstBoxScore);
+            this.Controls.Add(this.lstBoxName);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.label1);
             this.Name = "FrmMenu";
@@ -182,8 +182,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnStart;
-        private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox lstBoxName;
+        private System.Windows.Forms.ListBox lstBoxScore;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
