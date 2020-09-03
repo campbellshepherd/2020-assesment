@@ -1,6 +1,6 @@
 ﻿namespace _2020_Game
 {
-    partial class Form1
+    partial class FrmGame
     {
         /// <summary>
         /// Required designer variable.
@@ -177,7 +177,7 @@
             // TmrEnemy
             // 
             this.TmrEnemy.Enabled = true;
-            this.TmrEnemy.Interval = 1;
+            this.TmrEnemy.Interval = 20;
             this.TmrEnemy.Tick += new System.EventHandler(this.TmrEnemy_Tick);
             // 
             // TmrBullet
@@ -209,7 +209,7 @@
             this.lblAmmo.TabIndex = 10;
             this.lblAmmo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Form1
+            // FrmGame
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -227,7 +227,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
+            this.Name = "FrmGame";
             this.Text = "FrmGame";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);

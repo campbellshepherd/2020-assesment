@@ -45,7 +45,7 @@ namespace _2020_Game
 
         private void btnStart_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1(TxtName.Text);
+            FrmGame form1 = new FrmGame(TxtName.Text);
             Hide();
             form1.ShowDialog();
         }

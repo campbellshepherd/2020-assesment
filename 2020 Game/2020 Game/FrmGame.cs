@@ -11,9 +11,10 @@ using System.Reflection;
 
 namespace _2020_Game
 {
-    public partial class Form1 : Form
+    public partial class FrmGame : Form
     {
-        int ammo = 5;
+        int speedup;
+        int ammo = 7;
         int lives = 5;
         int score=0;
         Graphics g;
@@ -22,8 +23,10 @@ namespace _2020_Game
         List<Bullet> bullets = new List<Bullet>();
         List<HighScore> highScores = new List<HighScore>();
         Enemy[] enemies = new Enemy[12];
+        EnemyBottom[] enemiesBottom = new EnemyBottom[12];
         Random yspeed = new Random();
-        public Form1(string playerName)
+        
+        public FrmGame(string playerName)
         {
             InitializeComponent();
             lblName.Text = playerName;
@@ -33,7 +36,12 @@ namespace _2020_Game
                 int x = 10 + (i * 75);
                 enemies[i] = new Enemy(x);
             }
-            lblAmmo.Text = "5";
+            for (int i = 0; i < 12; i++)
+            {
+                int x = 10 + (i * 75);
+                enemiesBottom[i] = new EnemyBottom(x);
+            }
+            lblAmmo.Text = "7";
             LblLives.Text = "5";
             lblScore.Text = score.ToString();
         }
@@ -53,13 +61,13 @@ namespace _2020_Game
             g = e.Graphics;
             for (int i = 0; i < 12; i++)
             {
-                int rndmspeed = yspeed.Next(1, 5);
-                enemies[i].y += rndmspeed;
+               
                 enemies[i].DrawEnemy(g);
+                
+                enemiesBottom[i].DrawEnemy(g);
             }
             player.drawPlayer(g);
-           
-           
+
             foreach (Bullet m in bullets)
             {
                m.drawBullet(g);
@@ -85,7 +93,7 @@ namespace _2020_Game
                 TmrBullet.Enabled=true;
                 lblAmmo.Text = "Reloading";
             }
-            if (lives == 0)
+            if (lives < 1)
             {
                 TmrBullet.Enabled = false;
                 tmrPlayer.Enabled = false;
@@ -134,11 +142,18 @@ namespace _2020_Game
            
             for (int i = 0; i < 12; i++)
             {
-
+                int rndmspeed = yspeed.Next(1, 5);
+                enemies[i].y += rndmspeed + speedup;
+                enemiesBottom[i].y -= rndmspeed + speedup;
+                enemiesBottom[i].MoveEnemy();
                 enemies[i].MoveEnemy();
                 if (enemies[i].y >= pnlGame.Height)
                 {
                     enemies[i].y = 30;
+                }
+                if (enemiesBottom[i].y < 0)
+                {
+                    enemiesBottom[i].y = 350;
                 }
                 if (player.playerRec.IntersectsWith(enemies[i].enmyRec))
                 {
@@ -147,7 +162,14 @@ namespace _2020_Game
                     LblLives.Text = lives.ToString();
 
                 }
-                
+                if (player.playerRec.IntersectsWith(enemiesBottom[i].enmyRec))
+                {
+                    enemiesBottom[i].y = 30;
+                    lives -= 1;
+                    LblLives.Text = lives.ToString();
+
+                }
+
                 foreach (Enemy p in enemies)
                 {
                     foreach (Bullet m in bullets)
@@ -159,9 +181,20 @@ namespace _2020_Game
                             lblScore.Text = score.ToString();
                             bullets.Remove(m);
                             break;
-                           
-
-
+                        }
+                    }
+                }
+                foreach (EnemyBottom p in enemiesBottom)
+                {
+                    foreach (Bullet m in bullets)
+                    {
+                        if (p.enmyRec.IntersectsWith(m.bulletRec))
+                        {
+                            p.y =400;// relocate planet to the top of the form
+                            score += 1;
+                            lblScore.Text = score.ToString();
+                            bullets.Remove(m);
+                            break;
                         }
                     }
                 }
@@ -171,7 +204,8 @@ namespace _2020_Game
 
         private void TmrBullet_Tick(object sender, EventArgs e)
         {
-            ammo = 5;
+            speedup += 1;
+            ammo = 7;
             lblAmmo.Text = ammo.ToString();
             TmrBullet.Enabled = false;
 

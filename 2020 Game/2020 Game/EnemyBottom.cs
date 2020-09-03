@@ -18,7 +18,7 @@ namespace _2020_Game
         public EnemyBottom(int spacing)
         {
             x = spacing;
-            y = 400;
+            y = 500;
             width = 20;
             height = 20;
             enemyImage = Properties.Resources.enemy;
