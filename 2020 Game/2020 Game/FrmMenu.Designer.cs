@@ -47,10 +47,10 @@
             this.label1.BackColor = System.Drawing.Color.Black;
             this.label1.Font = new System.Drawing.Font("Harlow Solid Italic", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.label1.Location = new System.Drawing.Point(40, 9);
-            this.label1.MinimumSize = new System.Drawing.Size(150, 0);
+            this.label1.Location = new System.Drawing.Point(1, -4);
+            this.label1.MinimumSize = new System.Drawing.Size(420, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(325, 61);
+            this.label1.Size = new System.Drawing.Size(420, 70);
             this.label1.TabIndex = 1;
             this.label1.Text = "Ogre Blaster 3";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -58,7 +58,7 @@
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(137, 461);
+            this.btnStart.Location = new System.Drawing.Point(137, 422);
             this.btnStart.Name = "btnStart";
             this.btnStart.Size = new System.Drawing.Size(145, 45);
             this.btnStart.TabIndex = 2;
@@ -122,7 +122,6 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 250);
             this.label5.TabIndex = 9;
-            this.label5.Text = "label5";
             // 
             // label6
             // 
@@ -138,7 +137,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(177, 372);
+            this.label7.Location = new System.Drawing.Point(177, 355);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 20);
             this.label7.TabIndex = 11;
@@ -147,7 +146,7 @@
             // TxtName
             // 
             this.TxtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TxtName.Location = new System.Drawing.Point(148, 407);
+            this.TxtName.Location = new System.Drawing.Point(148, 390);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(125, 26);
             this.TxtName.TabIndex = 12;
@@ -158,7 +157,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(413, 518);
+            this.ClientSize = new System.Drawing.Size(414, 473);
             this.Controls.Add(this.TxtName);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);

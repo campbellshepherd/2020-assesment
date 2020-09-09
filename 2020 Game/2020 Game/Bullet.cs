@@ -19,8 +19,8 @@ namespace _2020_Game
         Point centreBullet;
         public Bullet(Rectangle playerRec, int bulletRotate)
         {
-            width = 10;
-            height = 20;
+            width = 15;
+            height = 15;
             bullet = Properties.Resources.Bullet;
             bulletRec = new Rectangle(x, y, width, height);
             xSpeed = 30 * (Math.Cos((bulletRotate - 90) * Math.PI / 180));

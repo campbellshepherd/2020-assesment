@@ -142,7 +142,7 @@ namespace _2020_Game
            
             for (int i = 0; i < 12; i++)
             {
-                int rndmspeed = yspeed.Next(1, 5);
+                int rndmspeed = yspeed.Next(1, 4);
                 enemies[i].y += rndmspeed + speedup;
                 enemiesBottom[i].y -= rndmspeed + speedup;
                 enemiesBottom[i].MoveEnemy();
@@ -150,10 +150,15 @@ namespace _2020_Game
                 if (enemies[i].y >= pnlGame.Height)
                 {
                     enemies[i].y = 30;
+                    score += 1;
+                    lblScore.Text = score.ToString();
                 }
                 if (enemiesBottom[i].y < 0)
                 {
                     enemiesBottom[i].y = 350;
+                    score += 1;
+                    lblScore.Text = score.ToString();
+
                 }
                 if (player.playerRec.IntersectsWith(enemies[i].enmyRec))
                 {
@@ -170,41 +175,14 @@ namespace _2020_Game
 
                 }
 
-                foreach (Enemy p in enemies)
-                {
-                    foreach (Bullet m in bullets)
-                    {
-                        if (p.enmyRec.IntersectsWith(m.bulletRec))
-                        {
-                            p.y = -20;// relocate planet to the top of the form
-                            score += 1;
-                            lblScore.Text = score.ToString();
-                            bullets.Remove(m);
-                            break;
-                        }
-                    }
-                }
-                foreach (EnemyBottom p in enemiesBottom)
-                {
-                    foreach (Bullet m in bullets)
-                    {
-                        if (p.enmyRec.IntersectsWith(m.bulletRec))
-                        {
-                            p.y =400;// relocate planet to the top of the form
-                            score += 1;
-                            lblScore.Text = score.ToString();
-                            bullets.Remove(m);
-                            break;
-                        }
-                    }
-                }
+              
             }
             
         }
 
         private void TmrBullet_Tick(object sender, EventArgs e)
         {
-            speedup += 1;
+           
             ammo = 7;
             lblAmmo.Text = ammo.ToString();
             TmrBullet.Enabled = false;
@@ -225,6 +203,43 @@ namespace _2020_Game
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void tmrSpeedup_Tick(object sender, EventArgs e)
+        {
+            speedup += 1;
+        }
+
+        private void tmrBulletHit_Tick(object sender, EventArgs e)
+        {
+            foreach (Enemy p in enemies)
+            {
+                foreach (Bullet m in bullets)
+                {
+                    if (p.enmyRec.IntersectsWith(m.bulletRec))
+                    {
+                        p.y = -20;// relocate planet to the top of the form
+                        score += 1;
+                        lblScore.Text = score.ToString();
+                        bullets.Remove(m);
+                        break;
+                    }
+                }
+            }
+            foreach (EnemyBottom p in enemiesBottom)
+            {
+                foreach (Bullet m in bullets)
+                {
+                    if (p.enmyRec.IntersectsWith(m.bulletRec))
+                    {
+                        p.y = 400;// relocate planet to the top of the form
+                        score += 1;
+                        lblScore.Text = score.ToString();
+                        bullets.Remove(m);
+                        break;
+                    }
+                }
+            }
         }
 
         private void Form1_KeyUp(object sender, KeyEventArgs e)

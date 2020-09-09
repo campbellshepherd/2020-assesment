@@ -45,6 +45,8 @@
             this.TmrBullet = new System.Windows.Forms.Timer(this.components);
             this.label8 = new System.Windows.Forms.Label();
             this.lblAmmo = new System.Windows.Forms.Label();
+            this.tmrSpeedup = new System.Windows.Forms.Timer(this.components);
+            this.tmrBulletHit = new System.Windows.Forms.Timer(this.components);
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -177,12 +179,12 @@
             // TmrEnemy
             // 
             this.TmrEnemy.Enabled = true;
-            this.TmrEnemy.Interval = 20;
+            this.TmrEnemy.Interval = 30;
             this.TmrEnemy.Tick += new System.EventHandler(this.TmrEnemy_Tick);
             // 
             // TmrBullet
             // 
-            this.TmrBullet.Interval = 1000;
+            this.TmrBullet.Interval = 750;
             this.TmrBullet.Tick += new System.EventHandler(this.TmrBullet_Tick);
             // 
             // label8
@@ -208,6 +210,18 @@
             this.lblAmmo.Size = new System.Drawing.Size(70, 30);
             this.lblAmmo.TabIndex = 10;
             this.lblAmmo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tmrSpeedup
+            // 
+            this.tmrSpeedup.Enabled = true;
+            this.tmrSpeedup.Interval = 10000;
+            this.tmrSpeedup.Tick += new System.EventHandler(this.tmrSpeedup_Tick);
+            // 
+            // tmrBulletHit
+            // 
+            this.tmrBulletHit.Enabled = true;
+            this.tmrBulletHit.Interval = 1;
+            this.tmrBulletHit.Tick += new System.EventHandler(this.tmrBulletHit_Tick);
             // 
             // FrmGame
             // 
@@ -257,6 +271,8 @@
         private System.Windows.Forms.Timer TmrBullet;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblAmmo;
+        private System.Windows.Forms.Timer tmrSpeedup;
+        private System.Windows.Forms.Timer tmrBulletHit;
     }
 }
 

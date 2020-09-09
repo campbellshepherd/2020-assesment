@@ -111,10 +111,10 @@
     <None Include="Resources\ogre1.PNG" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Bullet.png" />
+    <None Include="Resources\enemy.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\enemy.png" />
+    <None Include="Resources\Bullet.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

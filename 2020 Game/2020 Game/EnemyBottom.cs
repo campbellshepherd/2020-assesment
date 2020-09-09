@@ -19,8 +19,8 @@ namespace _2020_Game
         {
             x = spacing;
             y = 500;
-            width = 20;
-            height = 20;
+            width = 35;
+            height = 35;
             enemyImage = Properties.Resources.enemy;
             enmyRec = new Rectangle(x, y, width, height);
         }
