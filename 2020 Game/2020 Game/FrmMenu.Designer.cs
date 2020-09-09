@@ -151,6 +151,7 @@
             this.TxtName.Size = new System.Drawing.Size(125, 26);
             this.TxtName.TabIndex = 12;
             this.TxtName.TextChanged += new System.EventHandler(this.TxtName_TextChanged);
+            this.TxtName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtName_KeyPress);
             // 
             // FrmMenu
             // 
