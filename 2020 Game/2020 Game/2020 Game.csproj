@@ -116,5 +116,11 @@
   <ItemGroup>
     <None Include="Resources\Bullet.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\heat-vision.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chad_Crouch_-_Algorithms.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

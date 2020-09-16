@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Media;
 using System.Windows.Forms;
 
 namespace _2020_Game
@@ -19,6 +20,7 @@ namespace _2020_Game
         {
             InitializeComponent();
             var reader = new StreamReader(binPath);
+            
             while (!reader.EndOfStream)
             {
                 var line = reader.ReadLine();
@@ -41,6 +43,8 @@ namespace _2020_Game
         private void FrmMenu_Load(object sender, EventArgs e)
         {
             DisplayHighScores();
+            SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.music);
+            simpleSound.Play();
         }
 
         private void button1_Click(object sender, EventArgs e)

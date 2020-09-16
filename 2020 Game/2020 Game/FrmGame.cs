@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Reflection;
+using System.Media;
 
 namespace _2020_Game
 {
@@ -133,6 +134,8 @@ namespace _2020_Game
                     bullets.Add(new Bullet(player.playerRec, player.rotationAngle));
                     ammo -= 1;
                     lblAmmo.Text = ammo.ToString();
+                    SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.shoot);
+                    simpleSound.Play();
                 }
             }
         }
