@@ -81,6 +81,24 @@ namespace _2020_Game.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to kyja,35
+        ///zach,30
+        ///cody,24
+        ///theo,23
+        ///cam,22
+        ///cam,24
+        ///cam,22
+        ///theo,26
+        ///theo,25
+        ///theo,21.
+        /// </summary>
+        internal static string highscores {
+            get {
+                return ResourceManager.GetString("highscores", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream music {

@@ -122,6 +122,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(170, 250);
             this.label5.TabIndex = 9;
+            this.label5.Text = "avoid the enimes use mouse to move and arrows to rotate use mouse to shoot";
             // 
             // label6
             // 
