@@ -134,7 +134,7 @@ namespace _2020_Game
                     bullets.Add(new Bullet(player.playerRec, player.rotationAngle));
                     ammo -= 1;
                     lblAmmo.Text = ammo.ToString();
-                    SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.shoot);
+                    SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.Shoot);
                     simpleSound.Play();
                 }
             }

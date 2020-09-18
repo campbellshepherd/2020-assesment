@@ -101,9 +101,9 @@ namespace _2020_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream music {
+        internal static System.IO.UnmanagedMemoryStream Music {
             get {
-                return ResourceManager.GetStream("music", resourceCulture);
+                return ResourceManager.GetStream("Music", resourceCulture);
             }
         }
         
@@ -120,9 +120,9 @@ namespace _2020_Game.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.IO.UnmanagedMemoryStream shoot {
+        internal static System.IO.UnmanagedMemoryStream Shoot {
             get {
-                return ResourceManager.GetStream("shoot", resourceCulture);
+                return ResourceManager.GetStream("Shoot", resourceCulture);
             }
         }
     }

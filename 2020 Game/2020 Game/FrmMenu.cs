@@ -43,7 +43,7 @@ namespace _2020_Game
         private void FrmMenu_Load(object sender, EventArgs e)
         {
             DisplayHighScores();
-            SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.music);
+            SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.Music);
             simpleSound.Play();
         }
 
